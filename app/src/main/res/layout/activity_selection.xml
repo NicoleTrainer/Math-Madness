@@ -1,82 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectionActivity"
-    android:background="@drawable/backgroundimage"
+    android:background="#1E3A8A"
     android:scaleType="fitCenter">
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="335dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="184dp"
-        android:text="Addition"
-        android:textSize="25sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/sub"
-        android:layout_width="335dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="288dp"
-        android:text="Subtraction"
-        android:textSize="25sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/divide"
-        android:layout_width="335dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="492dp"
-        android:text="Division"
-        android:textSize="25sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/multiply"
-        android:layout_width="335dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="392dp"
-        android:text="Multiplication"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/fab_scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:background="@android:drawable/ic_menu_info_details"
+        android:contentDescription="View Top Scores"
+        tools:layout_editor_absoluteX="363dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="249dp"
-        android:layout_height="78dp"
-        android:textColor="@color/black"
-        android:layout_marginTop="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/rubik_bold"
         android:text="Select Game Type"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/rand"
-        android:layout_width="335dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add"
+        android:layout_width="347dp"
         android:layout_height="88dp"
-        android:layout_marginTop="596dp"
-        android:text="Random"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Addition"
+        android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sub"
+        android:layout_width="347dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Subtraction"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/multiply"
+        android:layout_width="347dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Multiplication"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sub" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rand"
+        android:layout_width="347dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Random"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/multiply" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

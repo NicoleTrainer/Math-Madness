@@ -18,13 +18,13 @@ public class EndActivity extends AppCompatActivity {
         String score = intent.getStringExtra("score");
         String type = intent.getStringExtra("type");
 
-        TextView textView = findViewById(R.id.scoreText);
+        TextView textView = findViewById(R.id.scorenumber);
         Button mainButton = findViewById(R.id.mainMenuButton);
         Button replayButton = findViewById(R.id.retryButton);
-        textView.setText("Score :" + score);
+        textView.setText(score);
 
         mainButton.setOnClickListener(v -> {
-            Intent newIntent = new Intent(EndActivity.this, MainActivity.class);
+            Intent newIntent = new Intent(EndActivity.this, SelectionActivity.class);
             startActivity(newIntent);
         });
         replayButton.setOnClickListener(v -> {

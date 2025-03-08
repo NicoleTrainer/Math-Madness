@@ -37,17 +37,6 @@ public class MathLogic {
 
    }
 
-   public String getDivisionQuestion() {
-
-       int num1 = rand.nextInt(10);
-       int num2 = rand.nextInt(10);
-       if (num2 == 0) {
-           return getDivisionQuestion();
-       }
-       answer = num1 / num2;
-       return num1 + " / " + num2;
-   }
-
 
 
    public int getAnswer() {

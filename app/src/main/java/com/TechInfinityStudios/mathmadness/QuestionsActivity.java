@@ -78,9 +78,7 @@ public class QuestionsActivity extends AppCompatActivity {
             case "mul":
                 multiplication();
                 break;
-            case "divide":
-                division();
-                break;
+
             case "rand":
                 rand();
                 break;
@@ -88,7 +86,7 @@ public class QuestionsActivity extends AppCompatActivity {
     }
 
     private void rand() {
-        int rand = random.nextInt(4);
+        int rand = random.nextInt(3);
         switch (rand) {
             case 0:
                 addition();
@@ -99,18 +97,10 @@ public class QuestionsActivity extends AppCompatActivity {
             case 2:
                 multiplication();
                 break;
-            case 3:
-                division();
-                break;
+
         }
     }
 
-    private void division() {
-            question = mathLogic.getDivisionQuestion();
-            questionText.setText(question);
-            answer = mathLogic.getAnswer();
-
-    }
 
     private void multiplication() {
         question = mathLogic.getMultiplicationQuestion();

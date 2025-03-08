@@ -1,64 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundimage"
+    android:background="#1E3A8A"
     android:scaleType="fitCenter">
 
+    <!-- Game Over Text -->
     <TextView
         android:id="@+id/gameOverText"
-        android:layout_width="367dp"
-        android:layout_height="113dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:fontFamily="@font/rubik_bold"
         android:text="GAME OVER!"
+        android:textColor="@color/white"
         android:textSize="60sp"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Score Label -->
+
+    <!-- Score Number -->
+
+    <!-- Buttons Container -->
 
     <TextView
         android:id="@+id/scoreText"
-        android:layout_width="232dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="244dp"
-        android:text="Score: 0"
-        android:textAlignment="center"
-        android:textSize="50sp"
-        android:textColor="@color/black"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="Score:"
+        android:textColor="@color/white"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/gameOverText" />
 
-    <Button
-        android:id="@+id/retryButton"
-        android:layout_width="149dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="404dp"
-        android:text="Try Again?"
-        android:textColor="@color/black"
-        android:backgroundTint="@null"
+    <TextView
+        android:id="@+id/scorenumber"
+        android:layout_width="181dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="368dp"
+        android:fontFamily="@font/rubik_medium"
+        android:text="0"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="90sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/mainMenuButton"
-        android:layout_width="146dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="404dp"
-        android:text="Main Menu"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="77dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Try Again Button (Left) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/retryButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/buttonshape"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Try Again?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/mainMenuButton"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- Main Menu Button (Right) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mainMenuButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/buttonshape"
+            android:fontFamily="@font/rubik_medium"
+            android:text="Main Menu"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/retryButton"
+            tools:layout_editor_absoluteY="-32dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

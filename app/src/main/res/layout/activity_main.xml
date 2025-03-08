@@ -5,31 +5,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/backgroundimage"
-    android:scaleType="fitCenter">
+    android:background="#1E3A8A"
+    android:scaleType="center"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/logoText"
         android:layout_width="422dp"
         android:layout_height="179dp"
         android:layout_marginTop="136dp"
+        android:fontFamily="@font/rubik_bold"
         android:text="MATH MADNESS"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/enterButton"
         android:layout_width="198dp"
         android:layout_height="93dp"
         android:layout_marginTop="488dp"
+        android:background="@drawable/buttonshape"
+        android:fontFamily="@font/rubik_medium"
         android:text="ENTER"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
