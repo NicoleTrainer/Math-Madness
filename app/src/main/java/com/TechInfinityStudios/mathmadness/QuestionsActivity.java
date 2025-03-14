@@ -1,7 +1,9 @@
 package com.TechInfinityStudios.mathmadness;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,11 +23,14 @@ public class QuestionsActivity extends AppCompatActivity {
     String type;
     Random random = new Random();
     int score = 0;
+    SharedPreferences sharedPreferences;
+    ArrayAdapter <String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+
         Intent intent = getIntent();
         type = intent.getStringExtra("type");
 
@@ -51,7 +56,7 @@ public class QuestionsActivity extends AppCompatActivity {
                     Intent newIntent = new Intent(this, EndActivity.class);
                     newIntent.putExtra("score", String.valueOf(score));
                     newIntent.putExtra("type", type);
-
+                    updateHighScore(score);
                     startActivity(newIntent);
                 }
 
@@ -63,6 +68,19 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
        });
+    }
+
+    private void updateHighScore(int score) {
+        sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE);
+        String highScores = sharedPreferences.getString(type, "");
+        if (highScores.isEmpty()) {
+            highScores = score + ",";;
+        }
+        else {
+            highScores += score + ",";
+        }
+
+        sharedPreferences.edit().putString(type, highScores).apply();
     }
 
     private void newQuestion() {
