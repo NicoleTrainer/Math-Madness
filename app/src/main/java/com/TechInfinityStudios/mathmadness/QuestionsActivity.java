@@ -78,6 +78,23 @@ public class QuestionsActivity extends AppCompatActivity {
         }
         else {
             highScores += score + ",";
+            String[] scoreArray = highScores.split(",");
+
+            for (int i = 0; i < scoreArray.length - 1; i++) {
+                for (int j = 0; j < scoreArray.length - 1 - i; j++) {
+                    if (Integer.parseInt(scoreArray[j]) < Integer.parseInt(scoreArray[j + 1])) {
+                        int temp = Integer.parseInt(scoreArray[j]);
+                        scoreArray[j] = scoreArray[j + 1];
+                        scoreArray[j + 1] = String.valueOf(temp);
+                    }
+                }
+            }
+            highScores = "";
+            int place = 1;
+            for (String s : scoreArray) {
+                highScores += place + ": " + s + ",";
+                place++;
+            }
         }
 
         sharedPreferences.edit().putString(type, highScores).apply();
